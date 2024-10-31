@@ -1,0 +1,138 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; /* Evitar problemas con el tamaño de los elementos */
+}
+
+body {
+    background-color: #f0f8ff; /* Alice Blue */
+    font-family: 'Arial', sans-serif;
+}
+
+.barra {
+    background-color: black;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px; /* Añadido un poco de espacio interno */
+}
+
+.izquierda {
+    display: flex;
+    align-items: center;
+}
+
+.izquierda a {
+    color: aliceblue;
+    text-decoration: none;
+    padding: 10px;
+    margin-right: 15px; /* Añadido margen entre enlaces */
+}
+
+.izquierda a:hover {
+    color: black;
+    background-color: aliceblue;
+}
+
+.derecha {
+    display: flex;
+    align-items: center;
+}
+
+.barra img {
+    height: 40px; /* Reducido el tamaño del logo para una apariencia más equilibrada */
+    width: auto;
+    margin-right: 10px; /* Añadido margen entre el logo y otros elementos */
+}
+
+.contenedor-general {
+    border: 5px solid #d4af37; /* Dorado */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+
+.intefaz {
+    width: 80%; /* Ajustado el ancho para un mejor equilibrio visual */
+    margin: 50px auto; /* Centralizado y reducido el espacio superior e inferior */
+    padding: 20px;
+    background-color: #fffaf0; /* Floral White */
+    border: 5px solid #ffd700; /* Gold */
+    border-radius: 15px; /* Bordes más redondeados */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.titulo {
+    font-family: 'Garamond', serif;
+    font-size: 36px; /* Aumentado el tamaño del título */
+    font-weight: bold;
+    padding: 20px;
+    background-color: #ffd700; /* Gold */
+    border-radius: 10px;
+    color: #fff;
+}
+
+.contenido {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.contenido p {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.5; /* Aumentado el espaciado entre líneas para una mejor legibilidad */
+}
+
+.cajitas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Espacio uniforme entre las cajitas */
+    margin-top: 20px;
+}
+
+.cuadrado {
+    width: calc(30% - 20px);
+    margin: 10px;
+    border: 2px solid #ffd700; /* Gold */
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.cuadrado:hover {
+    transform: scale(1.05); /* Efecto de escala al pasar el ratón */
+}
+
+.cuadrado img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.cuadrado p {
+    padding: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+
+.nombre-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.cuadrado:hover .nombre-overlay {
+    opacity: 1;
+}
