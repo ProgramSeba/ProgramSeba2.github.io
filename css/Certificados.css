@@ -1,7 +1,7 @@
 * {
     padding: 0;
     margin: 0;
-    box-sizing: border-box; /* Evitar problemas con el tamaño de los elementos */
+    box-sizing: border-box;
 }
 
 body {
@@ -10,40 +10,52 @@ body {
 }
 
 .barra {
-    background-color: black;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+    background-color: #1a1a2e;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px; /* Añadido un poco de espacio interno */
+    justify-content: space-between; /* Distribuye los elementos a los extremos */
+    align-items: center; /* Alinea verticalmente */
+    padding: 10px 20px; /* Espaciado interno */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra más sutil */
+    width: 100%;
+    position: sticky; /* Mantiene la barra fija al hacer scroll */
+    top: 0; /* Posición fija en la parte superior */
+    z-index: 1000;
 }
 
 .izquierda {
-    display: flex;
-    align-items: center;
+    display: flex; /* Alinea los elementos horizontalmente */
+    gap: 20px; /* Espacio entre los enlaces */
 }
 
 .izquierda a {
-    color: aliceblue;
-    text-decoration: none;
-    padding: 10px;
-    margin-right: 15px; /* Añadido margen entre enlaces */
+    color: aliceblue; /* Color del texto */
+    text-decoration: none; /* Elimina el subrayado */
+    font-size: 18px; /* Tamaño de la fuente */
+    font-weight: bold; /* Texto en negrita */
+    padding: 10px 15px; /* Espaciado interno de los enlaces */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s, color 0.3s; /* Animación suave en hover */
 }
 
 .izquierda a:hover {
-    color: black;
-    background-color: aliceblue;
+    color: black; /* Color del texto al pasar el mouse */
+    background-color: aliceblue; /* Fondo al pasar el mouse */
 }
 
 .derecha {
-    display: flex;
-    align-items: center;
+    display: flex; /* Alinea los iconos horizontalmente */
+    gap: 15px; /* Espacio entre los iconos */
 }
 
 .barra img {
-    height: 40px; /* Reducido el tamaño del logo para una apariencia más equilibrada */
-    width: auto;
-    margin-right: 10px; /* Añadido margen entre el logo y otros elementos */
+    height: 40px; /* Tamaño uniforme para los iconos */
+    width: auto; /* Mantiene la proporción */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el icono */
+    transition: transform 0.3s; /* Animación suave al pasar el mouse */
+}
+
+.barra img:hover {
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño */
 }
 
 .contenedor-general {
@@ -53,23 +65,22 @@ body {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
-
 .intefaz {
-    width: 80%; /* Ajustado el ancho para un mejor equilibrio visual */
-    margin: 50px auto; /* Centralizado y reducido el espacio superior e inferior */
+    width: 80%;
+    margin: 50px auto;
     padding: 20px;
-    background-color: #fffaf0; /* Floral White */
-    border: 5px solid #ffd700; /* Gold */
-    border-radius: 15px; /* Bordes más redondeados */
+    background-color: #fffaf0;
+    border: 5px solid #ffd700;
+    border-radius: 15px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
 .titulo {
     font-family: 'Garamond', serif;
-    font-size: 36px; /* Aumentado el tamaño del título */
+    font-size: 36px;
     font-weight: bold;
     padding: 20px;
-    background-color: #ffd700; /* Gold */
+    background-color: #ffd700;
     border-radius: 10px;
     color: #fff;
 }
@@ -82,27 +93,29 @@ body {
 .contenido p {
     font-size: 18px;
     color: #333;
-    line-height: 1.5; /* Aumentado el espaciado entre líneas para una mejor legibilidad */
+    line-height: 1.5;
 }
 
 .cajitas {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around; /* Espacio uniforme entre las cajitas */
+    justify-content: space-around;
     margin-top: 20px;
 }
 
 .cuadrado {
     width: calc(30% - 20px);
     margin: 10px;
-    border: 2px solid #ffd700; /* Gold */
+    border: 2px solid #ffd700;
     border-radius: 15px;
     overflow: hidden;
     transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column; /* Aseguramos que el contenido se apile de forma vertical */
 }
 
 .cuadrado:hover {
-    transform: scale(1.05); /* Efecto de escala al pasar el ratón */
+    transform: scale(1.05);
 }
 
 .cuadrado img {
@@ -115,8 +128,11 @@ body {
     padding: 10px;
     font-size: 16px;
     color: #333;
+    text-align: center;
+    overflow: hidden; /* Asegura que el texto no sobresalga */
+    text-overflow: ellipsis; /* Añade "..." si el texto es muy largo */
+    white-space: nowrap; /* Evita que el texto se desborde */
 }
-
 
 .nombre-overlay {
     position: absolute;
@@ -135,4 +151,16 @@ body {
 
 .cuadrado:hover .nombre-overlay {
     opacity: 1;
+}
+
+/* Media Queries para pantallas pequeñas */
+@media (max-width: 768px) {
+    .cuadrado {
+        width: 100%; /* Ocupa el 100% del ancho en pantallas pequeñas */
+        margin: 10px 0; /* Añadimos margen superior e inferior */
+    }
+
+    .contenido p {
+        font-size: 16px; /* Reducimos el tamaño del texto */
+    }
 }
